@@ -3,6 +3,6 @@
 # navigate to home directory, then to this directory, then execute python script, then back home
 
 cd /
-cd /home/pi/Desktop/freeArt/python
+cd /home/pi/Desktop/videoPlay/autoVideoplayOnRaspberryPi
 sudo python new.py
 cd /
