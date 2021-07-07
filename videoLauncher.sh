@@ -1,9 +1,10 @@
 #!/bin/bash
 
 DIR=/media/pi/
-
+sleep 5
 while true; do
-if pgrep omxplayer > /dev/null
+#if pgrep omxplayer > /dev/null
+if false;
 then
 	echo "running"
 else 
@@ -14,14 +15,15 @@ else
 
 
 
-		for f in `ls $FILES | grep ".mp4$\|.mov$"`
+		for f in `ls $FILES | grep ".mp4$\|.mov$\|.mp3$\|.wav$"`
 		do	
 			playDir="$FILES"
 			vids="$f"
 			echo "$f"
 		done
 	done
-	omxplayer -o both --no-osd --loop -b --aspect-mode fill "$playDir/${vids}"
+	omxplayer -o local --no-keys --loop "$playDir/${vids}" &
+	break
 	
 fi
 done
